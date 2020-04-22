@@ -2,6 +2,24 @@
   #FONTS
 \*------------------------------------*/
 
+@font-face{
+    font-family: "Clear Sans";
+    font-weight: 200;
+    src: url("/fonts/ClearSans-Light-webfont.woff") format("woff")
+}
+
+@font-face{
+    font-family: "Clear Sans";
+    font-weight: 400;
+    src: url("/fonts/ClearSans-Regular-webfont.woff") format("woff")
+}
+
+@font-face{
+    font-family: "Clear Sans";
+    font-weight: 600;
+    src: url("/fonts/ClearSans-Medium-webfont.woff") format("woff") 
+}
+
 /*------------------------------------*\
   #GENERIC
 \*------------------------------------*/
@@ -12,10 +30,26 @@
     Global page styles + universal box-sizing:
 */
 
+body{
+    background: rgba(10,37,125,1);
+    background: -moz-linear-gradient(-45deg, rgba(10,37,125,1) 0%, rgba(6,22,73,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(10,37,125,1)), color-stop(100%, rgba(6,22,73,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(10,37,125,1) 0%, rgba(6,22,73,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(10,37,125,1) 0%, rgba(6,22,73,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(10,37,125,1) 0%, rgba(6,22,73,1) 100%);
+    background: linear-gradient(135deg, rgba(10,37,125,1) 0%, rgba(6,22,73,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a257d', endColorstr='#061649', GradientType=1 );
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+}
+
 html {
-    font-size: 16px;
-    line-height: 24px;
-    font-family: Helvetica, arial, sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 200;
+    font-family:"Clear Sans", Helvetica, arial, sans-serif;
+    color: #FFFFFF;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -161,6 +195,11 @@ a:focus {
   #OBJECTS
 \*------------------------------------*/
 
+
+.o-page__width{
+    max-width: 1300px;
+    
+}
 /*
     Objects: Row
     ---
@@ -205,7 +244,7 @@ a:focus {
 .o-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 56.4em; /* 56.4 * 20px = 1128px */
+    max-width: 63.9em; /* 56.4 * 20px = 1128px */
 }
 
 /*
@@ -364,6 +403,120 @@ a:focus {
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
+
+.c-header__logo{
+
+    height: 32px;
+
+}
+
+.c-header__menu {
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 18px;
+}
+
+.c-header__menu-item {
+
+    list-style: none;
+    padding: 8px 0px 8px 0px;
+    
+}
+
+.c-header__menu-link {
+
+    text-decoration: none;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    font-weight: 200;
+
+}
+.c-header__menu-link:visited {
+    color: #FFFFFF;
+}
+
+.c-header__menu-link:hover {
+    transition: 0.1s ease;
+    text-shadow: 0 0 8px #8EC7FF;
+    color: #DBEDFF;
+
+}
+
+.c-section__text{
+    max-width: 32em;
+    
+}
+
+.c-section__bigtext{
+    color: #8EC7FF;
+}
+
+@media (min-width: 748px){
+    .c-header__menu-holder{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 56px;
+    }
+    .c-header__menu{
+        display: flex;
+        align-items: baseline;
+        height: 32px;
+    }
+    .c-header__menu-item{
+        padding-top: 4px;
+        margin-left: 36px;
+    }
+
+}
+
+.btn:hover {
+    background-position: right center; /* change the direction of the change here */
+}
+
+.c-cta__button{
+    text-decoration: none;
+    display: inline-block;
+    line-height: 24px;
+    padding: 10px 24px 10px 24px;
+    background: rgba(0,73,163,1);
+    background: -moz-linear-gradient(left, rgba(0,73,163,1) 0%, rgba(0,102,255,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,73,163,1)), color-stop(100%, rgba(0,102,255,1)));
+    background: -webkit-linear-gradient(left, rgba(0,73,163,1) 0%, rgba(0,102,255,1) 100%);
+    background: -o-linear-gradient(left, rgba(0,73,163,1) 0%, rgba(0,102,255,1) 100%);
+    background: -ms-linear-gradient(left, rgba(0,73,163,1) 0%, rgba(0,102,255,1) 100%);
+    background: linear-gradient(to right, rgba(0,73,163,1) 0%, rgba(0,102,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0049a3', endColorstr='#0066ff', GradientType=1 );
+    box-shadow: 0 0 2px ;
+}
+
+.c-fig__holder{
+    
+    position: relative;
+    padding: 0;
+    margin: 0; 
+    width: 100%;
+}
+
+.c-intro__overlay{
+    width: 100%;
+    height: 100%;
+}
+figcaption{
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #FFFFFF;
+    color: black;
+    width: 260px;
+    padding: 18px;
+    text-align: right;
+    border-right: 6px solid #0053FB;
+
+}
+
+
 
 /*------------------------------------*\
   #UTILITIES
